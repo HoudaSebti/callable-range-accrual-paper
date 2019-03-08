@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.14)  8 MAR 2019 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.14)  8 MAR 2019 13:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1487,30 +1487,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--59
+Underfull \hbox (badness 10000) in paragraph at lines 56--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
- []
-
-
-Overfull \hbox (261.78664pt too wide) in paragraph at lines 105--106
+Overfull \hbox (261.78664pt too wide) in paragraph at lines 106--107
  [] 
  []
 
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¨ in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¹ in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
+
+ []
+
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -1529,16 +1519,6 @@ Missing character: There is no ¹ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-
-Overfull \hbox (6.72078pt too wide) detected at line 134
-[]\OML/cmm/m/it/10 ^^V[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 
-(\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]; t[]; R[]\OT1/cmr/m/
-n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 t[]; t[]; R[]\OT1/cmr/m/n/10 ))
- []
-
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¹ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -1593,6 +1573,7 @@ Missing character: There is no ’ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
+
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
 
@@ -1609,22 +1590,22 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 This document will not have a glossary.
 
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./CRA paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `"CRA paper".out' has not changed.
-(rerunfilecheck)             Checksum: DD43B2A67195D6ADFCF3E6B0B2C040BC;788.
+(rerunfilecheck)             Checksum: B66C1B32F3E00DFD939D06333221AC99;933.
  ) 
 Here is how much of TeX's memory you used:
- 43477 strings out of 492995
- 971094 string characters out of 6132704
- 1153688 words of memory out of 5000000
- 46310 multiletter control sequences out of 15000+600000
- 48930 words of font info for 119 fonts, out of 8000000 for 9000
+ 43480 strings out of 492995
+ 971138 string characters out of 6132704
+ 1154076 words of memory out of 5000000
+ 46312 multiletter control sequences out of 15000+600000
+ 47823 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,16n,101p,10446b,888s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,16n,101p,10446b,789s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1643,10 +1624,10 @@ s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/ur
 w/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on "CRA paper.pdf" (2 pages, 164952 bytes).
+Output written on "CRA paper.pdf" (2 pages, 166851 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
