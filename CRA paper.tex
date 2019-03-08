@@ -1,0 +1,205 @@
+
+\documentclass[letterpaper, 10 pt, conference]{IEEEtran}
+\IEEEoverridecommandlockouts 
+\IEEEpubid{\makebox[\columnwidth]{978-1-4799-4937-3/14/\$31.00~\copyright{}2014 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+\usepackage{macros}
+\include{acronyms}
+\title{
+	\huge Pricing of the Callable Range Accruals using Longstaff Schwartz algorithm
+}
+
+\author{
+	\begin{tabular}[t]{c@{\extracolsep{4em}}c@{\extracolsep{4em}}c@{\extracolsep{4em}}c}
+		Houda Sebti${}^1$ & Said Guida${}^2$\\
+	\end{tabular}
+	{}\\
+	\\
+	${}^1$       Ecole des Ponts ParisTech, Champs-sur-Marne, France\\
+	${}^2$       Efficiency Management Consulting, Paris, France
+	{}\\
+	\\
+	sebti.houda14@gmail.com\\
+}
+\begin{document}
+	
+	\maketitle
+	\thispagestyle{empty}
+	\pagestyle{empty}
+	
+	\begin{abstract}
+		
+		The Callable Range Accrual is one of the most widely used derivatives. The aim of this paper is to model this product under the \acrlong{lmm}.
+		
+		The first step of the work is the mathematical modeling of the \gls{cra}. To do this, we  used the method of \gls{ls} to determine the sequence of optimal stopping times.\\
+		
+		The second step of the work consists of calibrating the \acrshort{lmm} model to the market data and then implementing the C ++ program allowing the pricing of the model. To do so, we used the financial open source library Quantlib.\\
+		
+		In the last step of this work, we will adress the application of a corrective measure to the model in order to reduce the gap between the market price and the model price and to correct the relative pricing error due to the calibration.
+	\end{abstract}
+	
+	\section{INTRODUCTION}
+	
+		blablabla
+	
+	
+		\subsection{libor rate}
+		
+			blablabla
+		
+		\subsection{Libor Market Model}
+		
+			blablaba
+		\subsection{Callable Range Accruals}
+			\begin{itemize}
+				\item {\small \bf Range accruals:}\\
+				A range accrual, or range accrual note, is a type of financial derivative product where one party pays a fixed coupon\footnote{rate of interest that a bondholder receives} to a second party and receives a variable coupon from it.\\
+				The variable coupon depends on the value of an index. This index could be an interest rate, currency exchange rate, the price of a commodity, or stock index. If the index value falls within a specified range, the coupon accrues or is credited interest. If the index value falls outside the specified range, the coupon rate does not accumulate.
+				\\
+				\item {\small \bf The callable aspect:}\\
+				A callable (or cancellable) instrument gives the exotic interest rate payer (variable leg payer) the option to terminate the contract prior to its maturity, and on predetermined dates.
+				
+				\item {\small \bf Cash flows of a callable range accrual:}\\
+				
+				\begin{figure}[H]
+					\begin{center}
+						\caption{\label{fig::cash_flow_cra}\acrlong{cra} cash flows}
+						\begin{scaletikzpicturetowidth}{\textwidth}
+							\begin{tikzpicture}[scale=\tikzscale]
+							\tikzstyle{lien}=[>=stealth, rounded corners = 5pt, thick]
+							%%
+							\draw[->][ultra thick](-0.5,0)--(8, 0);
+							\draw[ultra thick][color=purple](-0.5, -0.2)--(-0.5, 0.2);
+							\draw[above left][color=purple!20](2, 0.3) node[draw, circle, fill=purple!20]{\scriptsize{\textcolor{black}{${T}_1$}}};
+							\draw[->][thick][color=gray](1.9, 0)--(1.9, 2);
+							\draw[above left](1.9, 2) node{\small{FC 1 payment}};
+							
+							\draw[above right][color=purple!20](3, 0.3) node[draw, circle, fill=purple!20]{\scriptsize{\textcolor{black}{${T}_2$}}};
+							\draw[->][thick][color=gray](3, 0)--(3, 2);
+							\draw[above right](2.6, 2) node{\small{FC 2 payment}};
+							
+							\draw[above right][color=purple!20](4.5, 0.3) node[draw, circle, fill=purple!20]{\scriptsize{\textcolor{black}{${T}_3$}}};
+							\draw[->][thick][color=gray](4.9, 0)--(4.9, 2);
+							\draw[above right](4.5, 2) node{\small{FC 3 payment}};
+							
+							
+							\draw[->][thick][color=gray](7.5, 0)--(7.5, 3);
+							\draw[above right][color=purple!20](13.9, 0.3) node[draw, circle, fill=purple!20]{\scriptsize{\textcolor{black}{${T^{"}}_n$}}};
+							\draw[above right](13.9, 3) node{\small{fixed coupon n paymen}};
+							
+							\draw[->][thick][color=gray](2.9, 0)--(2.9, -3);
+							
+							\draw[above left][color=purple!60](2.9, 0) node[draw, circle, fill=purple!60]{\scriptsize{\textcolor{white}{$T_1$}}};
+							\draw[above](2.9, -3) node{\small{$1^{er}$ accrual coupon}};
+							
+							\draw[->][thick][color=gray](6.9, 0)--(6.9, -2.5);
+							
+							\draw[above left][color=purple!60](6.9, 0) node[draw, circle, fill=purple!60]{\scriptsize{\textcolor{white}{$T_2$}}};
+							\draw[above](6.9, -2.5) node{\small{$2^{eme}$ accrual coupon}};
+							
+							\draw[->][thick][color=gray](15.9, 0)--(15.9, -3);
+							
+							\draw[thick][color=purple](3.4, -1.2)--(3.4, -1.6);
+							
+							\end{tikzpicture}
+						\end{scaletikzpicturetowidth}
+						
+					\end{center}
+				\end{figure}
+				
+				
+				The cash flows $Z_{i}$ of a callable range accrual can be modeled as follows:
+				\begin{equation}
+					Z_i=\frac{\delta_{T_i} . C_i-\delta_{T_i}^{'} . F_i}{B(T_i)}
+				\end{equation}
+				Where:
+				\begin{itemize}
+					\item \textbf{\textcolor{darkgray}{ ${C}_i$:}\\} est le coupon du callable range accrual (accrual coupon).
+					
+					
+					\item On considère ici que le taux de référence du callable range accrual est le taux \Gls{libor} 6 mois.
+				\end{itemize}
+				
+				Où $R_{j,max}$ et $R_{j,min}$ sont les bornes du corridor du callable range accrual.\\
+				Le coupon $C_i$ est payé en les dates $T_i$ de la tenor structure, les $C_i$ s'expriment comme suit:
+				
+				\begin{equation*}
+					C_j=\sum_{i \in [T_j,T_{j+1}]} \mu_i
+				\end{equation*}
+				
+				Où les $\mu_i$ doivent être calculés chaque jour $t_i \in [T_j,T_{j+1}]$ avec:
+				
+				\begin{equation}
+					\mu_{i,j}=\frac{\alpha_j . R_{fix}}{M_j} . (F_{dig}(t_i, t_i, R_{j,max})- F_{dig}(t_i, t_i, R_{j,min}))
+				\end{equation}
+				
+				Où:
+				
+				\begin{itemize}
+					\item $\alpha_j$ étant le payout sur la période $[T_j,T_{j+1}]$.
+					\item $R_{fix}$ est un taux de revient déterminé dès le début du contrat (Généralement égal à 5$\%$).
+					\item $M_j$ est le nombre de jours sur la période $[T_j,T_{j+1}]$.
+					\item  Et $F_{dig}(t_i,t_i,R_{max})$ étant la valeur d'un floorlet digital pricé en $t_i$ et ayant pour maturité le même jour $t_i$.
+					i.e:
+					
+					\begin{equation}
+						F_{dig}(t_i,t_i,K) = 
+						\begin{cases}
+							1 & \text{si } L(t_i) \leq K \\
+							0 & \text{sinon}
+						\end{cases}
+					\end{equation}
+					
+				\end{itemize}
+				
+				
+			\end{itemize}
+	
+	
+	\section{CALLABLE RANGE ACCRUAL PRICING}
+	\subsection{State of the art}
+	blabla
+	\subsection{Longstaff Schwartz algorithm}
+	blabla
+	\subsection{computing the conditional expectancy}
+	blabla
+	
+	\section{Experiments}
+	
+	\subsection{Data}
+	
+	blablabla
+	
+	\subsection{Results}]
+	blabla
+	\section{CONCLUSIONS}
+	
+	A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
+	
+	\addtolength{\textheight}{-12cm}  
+	
+	
+	\section*{APPENDIX}
+	
+	Appendixes should appear before the acknowledgment.
+	
+	\section*{ACKNOWLEDGMENT}
+	
+	The preferred spelling of the word ÒacknowledgmentÓ in America is without an ÒeÓ after the ÒgÓ. Avoid the stilted expression, ÒOne of us (R. B. G.) thanks . . .Ó  Instead, try ÒR. B. G. thanksÓ. Put sponsor acknowledgments in the unnumbered footnote on the first page.
+	
+	
+	
+	References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
+	
+	
+	
+	\begin{thebibliography}{99}
+		
+		\bibitem{c1} G. O. Young, ÒSynthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J.
+		
+	\end{thebibliography}
+	
+	
+	
+	
+\end{document}
