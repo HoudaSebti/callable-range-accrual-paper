@@ -1,0 +1,85 @@
+\ProvidesPackage{macros}
+
+\usepackage{import}
+
+\usepackage[english]{babel}
+
+\usepackage{latexsym}
+\usepackage{eurosym}
+\usepackage[acronym]{glossaries}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{tabularx, ragged2e}
+\usepackage{lscape}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.6}
+\usetikzlibrary{patterns,hobby}
+
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize,        % size of fonts used for the code
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve},     % string literal style
+}
+
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\usepackage{todonotes}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\mathbb{1}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\DeclareMathSymbol{\mtimes}{\mathbin}{symbols}{"02}
+\newcolumntype{C}{>{\Centering\arraybackslash}X}
+\newcolumntype{P}[1]{>{\centering}p{#1}}
+
+\definecolor{rougebrique}{rgb}{1,0.2,0.3}
+\definecolor{bleupetrole}{cmyk}{0.8,0.5,0.1,0.6}
+\definecolor{bleunuit}{cmyk}{1,0.5,0,0.5}
+\definecolor{DarkCyan}{cmyk}{0.819,0,0.079,0.502}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section] % Defines the theorem environment
+\newtheorem{prop}[thm]{Proposition} % Defines the proposition environment
+\newtheorem{definition}{Definition}[section] % Defines the definition environment
+\newtheorem{example}{Example}[section] % Defines the example environment
+\newtheorem{rem}{Remark} % Defines the remark environment
+\newtheorem{note}{Note}[section] % Defines the note environment
+
+
+\usepackage{environ}
+\makeatletter
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[1]{%
+	\def\tikz@width{#1}%
+	\def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+		\BODY
+	\end{lrbox}%
+	\pgfmathparse{#1/\wd\measure@tikzpicture}%
+	\edef\tikzscale{\pgfmathresult}%
+	\BODY
+}
+\makeatother
