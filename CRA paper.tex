@@ -33,7 +33,7 @@
 		
 		The first step of the work is the mathematical modeling of the \gls{cra}. To do this, we  used the method of \gls{ls} to determine the sequence of optimal stopping times.\\
 		
-		The second step of the work consists of calibrating the \acrshort{lmm} model to the market data and then implementing the C ++ program allowing the pricing of the model. To do so, we used the financial open source library Quantlib.\\
+		The second step of the work consists of using both stock price and rates as the underlyings of \gls{cra}. To do so, we will use Black Scoles model for stock prices and \acrshort{lmm} model for LIBOR rates. We will then calibrate the \acrshort{lmm} to the market data and then implementing the C ++ program allowing the pricing of the model. To do so, we used the financial open source library Quantlib.\\
 		
 		In the last step of this work, we will adress the application of a corrective measure to the model in order to reduce the gap between the market price and the model price and to correct the relative pricing error due to the calibration.
 	\end{abstract}
@@ -42,11 +42,12 @@
 	
 		blablabla
 	
-	
+
+		\subsection{Black Scholes formula}
+		The Blac
 		\subsection{libor rate}
 		
-			blablabla
-		
+		blablabla
 		\subsection{Libor Market Model}
 		
 			blablaba
@@ -58,8 +59,8 @@
 				\\
 				\item {\small \bf The callable aspect:}\\
 				A callable (or cancellable) instrument gives the exotic interest rate payer (variable leg payer) the option to terminate the contract prior to its maturity, and on predetermined dates.
-				
-				\item {\small \bf Cash flows of a callable range accrual:}\\
+			\end{itemize}
+			\section{Cash flows of a callable range accrual}
 				
 				\begin{figure}[H]
 					\begin{center}
@@ -106,22 +107,18 @@
 						
 					\end{center}
 				\end{figure}
-				
-				
+			
 				The cash flows $Z_{i}$ of a callable range accrual can be modeled as follows:
 				\begin{equation}
 					Z_i=\frac{\delta_{T_i} . C_i-\delta_{T_i}^{'} . F_i}{B(T_i)}
 				\end{equation}
-				Where:
-				\begin{itemize}
-					\item \textbf{\textcolor{darkgray}{ ${C}_i$:}\\} est le coupon du callable range accrual (accrual coupon).
-					
-					
-					\item On considère ici que le taux de référence du callable range accrual est le taux \Gls{libor} 6 mois.
-				\end{itemize}
-				
-				Où $R_{j,max}$ et $R_{j,min}$ sont les bornes du corridor du callable range accrual.\\
-				Le coupon $C_i$ est payé en les dates $T_i$ de la tenor structure, les $C_i$ s'expriment comme suit:
+				$C_{i}$ are the variable leg coupons.\\
+				$Z_{i}$ are the fixed leg coupons.\\
+				$[T_{1}, T_{2},..., T_{n}]$ are the fixed tenor dates: the dates in which we pay the fixed leg coupons ${Z_{i}}_{i \in [|1,n|]}$.\\
+				$[{T_{1}}^{'}, {T_{2}}^{'},..., {T_{n}}^{'},]$ are the variable tenor dates: the dates in which we pay the variable leg coupons ${C_{i}}_{i \in [|1,n|]}$.\\
+				${\delta}_{i} = T_{i+1} - T_{i},  \forall i \in [|1,n|]$\\
+				${{\delta}_{i}}^{'} = {T_{i+1}}^{'} - {T_{i}}^{'},  \forall i \in [|1,n|]$\\
+
 				
 				\begin{equation*}
 					C_j=\sum_{i \in [T_j,T_{j+1}]} \mu_i
@@ -132,8 +129,6 @@
 				\begin{equation}
 					\mu_{i,j}=\frac{\alpha_j . R_{fix}}{M_j} . (F_{dig}(t_i, t_i, R_{j,max})- F_{dig}(t_i, t_i, R_{j,min}))
 				\end{equation}
-				
-				Où:
 				
 				\begin{itemize}
 					\item $\alpha_j$ étant le payout sur la période $[T_j,T_{j+1}]$.
@@ -153,7 +148,7 @@
 				\end{itemize}
 				
 				
-			\end{itemize}
+
 	
 	
 	\section{CALLABLE RANGE ACCRUAL PRICING}
