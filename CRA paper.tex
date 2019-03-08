@@ -110,45 +110,26 @@
 			
 				The cash flows $Z_{i}$ of a callable range accrual can be modeled as follows:
 				\begin{equation}
-					Z_i=\frac{\delta_{T_i} . C_i-\delta_{T_i}^{'} . F_i}{B(T_i)}
+					Z_i=\frac{\delta_{T_i} . \E(C_i)-\delta_{T_i}^{'} . F_i}{B(T_i)}
 				\end{equation}
 				$C_{i}$ are the variable leg coupons.\\
-				$Z_{i}$ are the fixed leg coupons.\\
-				$[T_{1}, T_{2},..., T_{n}]$ are the fixed tenor dates: the dates in which we pay the fixed leg coupons ${Z_{i}}_{i \in [|1,n|]}$.\\
+				$F_{i}$ are the fixed leg coupons.\\
+				$[T_{1}, T_{2},..., T_{n}]$ are the fixed tenor dates: the dates in which we pay the fixed leg coupons ${F_{i}}_{i \in [|1,n|]}$.\\
 				$[{T_{1}}^{'}, {T_{2}}^{'},..., {T_{n}}^{'},]$ are the variable tenor dates: the dates in which we pay the variable leg coupons ${C_{i}}_{i \in [|1,n|]}$.\\
 				${\delta}_{i} = T_{i+1} - T_{i},  \forall i \in [|1,n|]$\\
 				${{\delta}_{i}}^{'} = {T_{i+1}}^{'} - {T_{i}}^{'},  \forall i \in [|1,n|]$\\
 
-				
-				\begin{equation*}
-					C_j=\sum_{i \in [T_j,T_{j+1}]} \mu_i
-				\end{equation*}
-				
-				Où les $\mu_i$ doivent être calculés chaque jour $t_i \in [T_j,T_{j+1}]$ avec:
-				
-				\begin{equation}
-					\mu_{i,j}=\frac{\alpha_j . R_{fix}}{M_j} . (F_{dig}(t_i, t_i, R_{j,max})- F_{dig}(t_i, t_i, R_{j,min}))
-				\end{equation}
-				
-				\begin{itemize}
-					\item $\alpha_j$ étant le payout sur la période $[T_j,T_{j+1}]$.
-					\item $R_{fix}$ est un taux de revient déterminé dès le début du contrat (Généralement égal à 5$\%$).
-					\item $M_j$ est le nombre de jours sur la période $[T_j,T_{j+1}]$.
-					\item  Et $F_{dig}(t_i,t_i,R_{max})$ étant la valeur d'un floorlet digital pricé en $t_i$ et ayant pour maturité le même jour $t_i$.
-					i.e:
+				\subsection{Fixed leg coupons $F_{i}$}
+				\subsection{Variable leg coupons $C_{i}$}
+					\begin{equation*}
+						C_i=payoff * \frac{\sum_{j=i}^{j=i+1}\indicator (S_{t_i} \in [S_{min},S_{max}])}{\sum_{j=i}^{j-i+1}t_j}
+					\end{equation*}
 					
-					\begin{equation}
-						F_{dig}(t_i,t_i,K) = 
-						\begin{cases}
-							1 & \text{si } L(t_i) \leq K \\
-							0 & \text{sinon}
-						\end{cases}
-					\end{equation}
+					\begin{equation*}
+					\E(C_i)=payoff * \frac{\sum_{j=i}^{j=i+1} \P (S_{t_i} \in [S_{min},S_{max}])}{\sum_{j=i}^{j-i+1}t_j}
+					\end{equation*}
 					
-				\end{itemize}
-				
-				
-
+						
 	
 	
 	\section{CALLABLE RANGE ACCRUAL PRICING}
