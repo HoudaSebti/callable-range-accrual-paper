@@ -1,7 +1,5 @@
 
-\documentclass[letterpaper, 10 pt, conference]{IEEEtran}
-\IEEEoverridecommandlockouts 
-\IEEEpubid{\makebox[\columnwidth]{978-1-4799-4937-3/14/\$31.00~\copyright{}2014 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }}
+\documentclass[12pt]{article}
 
 \usepackage{macros}
 \include{acronyms}
@@ -110,7 +108,7 @@
 			
 				The cash flows $Z_{i}$ of a callable range accrual can be modeled as follows:
 				\begin{equation}
-					Z_i=\frac{\delta_{T_i} . \E(C_i)-\delta_{T_i}^{'} . F_i}{B(T_i)}
+					Z_i=\frac{\delta_{T_i} . C_i -\delta_{T_i}^{'} . F_i}{B(T_i)}
 				\end{equation}
 				$C_{i}$ are the variable leg coupons.\\
 				$F_{i}$ are the fixed leg coupons.\\
@@ -126,12 +124,50 @@
 					\end{equation*}
 					
 					\begin{equation*}
-					\E(C_i)=payoff * \frac{\sum_{j=i}^{j=i+1} \P (S_{t_i} \in [S_{min},S_{max}])}{\sum_{j=i}^{j-i+1}t_j}
+					\E(C_i)=payoff * \frac{\sum_{j=i}^{j=i+1} \PP (S_{t_i} \in [S_{min},S_{max}])}{\sum_{j=i}^{j-i+1}t_j}
 					\end{equation*}
 					
-						
-	
-	
+					\begin{equation}
+						\PP(S_t \in [S_{min},S_{max}]) = \int_{S_{min}}^{S_{max}} \frac{1}{\sqrt{2 \pi}} \frac{1}{s\sigma \sqrt{t}} \exp(-\frac{[\ln(S)-\ln(S_0)-
+							(\mu-\frac{\sigma^2}{2})t]^2}{2 \sigma ^{2}t}) ds
+					\end{equation}
+					
+					Let:  $$u = ln(s)$$\\
+					So:  $$du = \frac{ds}{s}$$
+					The equation becomes:
+					\begin{equation}
+					\PP(S_t \in [S_{min},S_{max}]) = \int_{ln(S_{min})}^{ln(S_{max})} \frac{1}{\sqrt{2 \pi}} \frac{e^{-u}}{\sigma \sqrt{t}} \exp(-\frac{[u-\ln(S_0)-
+						(\mu-\frac{\sigma^2}{2})t]^2}{2 \sigma ^{2}t}) e^{u}du
+					\end{equation}
+					Equation (3) implies:
+					\begin{equation}
+					\PP(S_t \in [S_{min},S_{max}]) = \int_{ln(S_{min})}^{ln(S_{max})} \frac{1}{\sqrt{2 \pi}} \frac{1}{\sigma \sqrt{t}} \exp(-\frac{[u-\ln(S_0)-
+						(\mu-\frac{\sigma^2}{2})t]^2}{2 \sigma ^{2}t}) du
+					\end{equation}
+					\begin{equation}
+					\PP(S_t \in [S_{min},S_{max}]) = F_{Y}(S_{max}]) - F_{Y}(S_{min}])
+					\end{equation}
+					\\
+					where $F_{X}(x)$ is the distribution function of a Gaussian random variable X
+					\begin{equation}
+					F_{X}(x) = \frac{1}{2}[1 + erf(\frac{x - \mu}{\sigma \sqrt{(2)}})])
+					\end{equation}
+					with:
+					 $$X \sim N(\mu,\sigma)$$
+					{\it erf} is the error function given by:
+					\begin{equation}
+					erf(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^{2}} dt
+					\end{equation}
+					in our case,
+					\begin{equation}
+					 Y~N[ln(S_{0}) + (\mu - \frac{\sigma^{2}}{2}t) ; \sigma^{2}t])
+ 					\end{equation}
+ 					\begin{equation}
+ 					\PP(S_t \in [S_{min},S_{max}]) = \frac{1}{2}[1+erf(\frac{ln(S_{max})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]-\frac{1}{2}[1+erf(\frac{ln(S_{min})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]
+ 					\end{equation}
+ 					\begin{equation}
+ 					\PP(S_t \in [S_{min},S_{max}]) = \frac{1}{2}[erf(\frac{ln(S_{max})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]-erf(\frac{ln(S_{min})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]
+ 					\end{equation}
 	\section{CALLABLE RANGE ACCRUAL PRICING}
 	\subsection{State of the art}
 	blabla
