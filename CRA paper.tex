@@ -113,8 +113,8 @@
 				$C_{i}$ is the variable leg coupon paid at date $T_i$.\\
 				$F_{i}$ are the fixed leg coupons.\\
 				$B(T_{i)}$ is the actualization factor, it's equal to $e^{-rT_{i}}$.\\
-				$[T_{1}, T_{2},..., T_{n}]$ are the fixed tenor dates: the dates in which we pay the fixed leg coupons ${F_{i}}_{i \in [|1,n|]}$.\\
-				$[{T_{1}}^{'}, {T_{2}}^{'},..., {T_{n}}^{'},]$ are the variable tenor dates: the dates in which we pay the variable leg coupons ${C_{i}}_{i \in [|1,n|]}$.\\
+				$[T_{1}, T_{2},..., T_{n}]$ are the variable tenor dates: the dates in which we pay the variable leg coupons ${F_{i}}_{i \in [|1,n|]}$.\\
+				$[{T_{1}}^{'}, {T_{2}}^{'},..., {T_{n}}^{'},]$ are the fixed tenor dates: the dates in which we pay the variable leg coupons ${C_{i}}_{i \in [|1,n|]}$.\\
 				${\delta}_{i} = T_{i+1} - T_{i},  \forall i \in [|1,n|]$\\
 				${{\delta}_{i}}^{'} = {T_{i+1}}^{'} - {T_{i}}^{'},  \forall i \in [|1,n|]$\\
 
@@ -170,7 +170,7 @@
 					\end{equation}
 					in our case,
 					\begin{equation}
-					 Y~N[ln(S_{0}) + (\mu - \frac{\sigma^{2}}{2}t) ; \sigma^{2}t])
+					 Y \sim N[ln(S_{0}) + (\mu - \frac{\sigma^{2}}{2}t) ; \sigma^{2}t])
  					\end{equation}
  					$\begin{array}{lcl}
  						\PP(S_t \in [S_{min},S_{max}]) =\\ \frac{1}{2}[1+erf(\frac{ln(S_{max})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]-\frac{1}{2}[1+erf(\frac{ln(S_{min})-ln(S_0)-(\mu-\frac{\sigma^2}{2}t)}{\sigma \sqrt{(2t)}})]
@@ -183,8 +183,8 @@
 	 	
 		 	Is the value of the contract at a certain date\\
 		 	$\begin{array}{lcl}
-			 	E(T_i) = \sum_{k = 1}^{i} (C_k * e^{-r(T_i - T_k)})\\
-			 	=payoff * \sum_{k=1}^{i}\frac{\sum_{j=i - 1}^{j=i}\indicator (S_{t_j} \in [S_{min},S_{max}])}{365} * e^{-r(T_i - T_k)}
+			 	E(T_i) = \sum_{k = 1}^{i} (C_k * e^{-r(T_i - T_k)}) -  \sum_{k = 1}^{i} ({T_f}^{'} {\delta_f}^{'} e^{-r({T_i}^{'} - {T_k}^{'})})\\
+			 	=payoff * \sum_{k=1}^{i}\frac{\sum_{j=i - 1}^{j=i}\indicator (S_{t_j} \in [S_{min},S_{max}])}{365} * e^{-r(T_i - T_k)} -  \sum_{k = 1}^{i} ({T_f}^{'} {\delta_f}^{'} e^{-r({T_i}^{'} - {T_k}^{'})})
 		 	\end{array}$
 		 	
 		 	
