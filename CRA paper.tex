@@ -191,7 +191,7 @@
 	 	\subsection{Hold value}
 	 	The hold value at a date $T_i$ is the expected future value of the contract if it has not been canceled at $T_i$, knowing the filtration of information we have today.
 	 	$\begin{array}{lcl}
-		 	H(T_i) = \E(E(T_{i}) * e^{r(\tau-T_i)} + \sum_{t \in[T_{i+1}; \tau ]}|S_{T_i})
+		 	H(T_i) = \E(E(T_{i}) * e^{r(\tau-T_i)} + \sum_{t \in[T_{i+1}; \tau ]}E(t)*e^{-r(t - T_i)}|S_{T_i})
 	 	\end{array}$
 	 	
 	 	$$
