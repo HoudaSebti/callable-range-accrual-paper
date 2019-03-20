@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.14)  19 MAR 2019 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.14)  20 MAR 2019 15:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1429,21 +1429,9 @@ Overfull \hbox (53.75496pt too wide) in paragraph at lines 104--105
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 112--119
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
 
  []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 120.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1457,44 +1445,50 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 121.
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 123.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 122.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 122.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 122.
+
+LaTeX Font Info:    Try loading font information for U+bbm on input line 124.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [3]
-Overfull \hbox (14.66405pt too wide) detected at line 133
+)
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+
+ []
+
+[3]
+Overfull \hbox (14.66405pt too wide) detected at line 143
 []\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 S[]; S[]\OT1/cmr/m/n/12 ]) = [][] [][] [](\OMS/cms
 y/m/n/12 ^^@[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ds
  []
 
 
-Overfull \hbox (15.38202pt too wide) detected at line 141
+Overfull \hbox (15.38202pt too wide) detected at line 151
 []\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 S[]; S[]\OT1/cmr/m/n/12 ]) = [][] [][] [](\OMS/cms
 y/m/n/12 ^^@[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 e[]du
  []
 
 
-Overfull \hbox (4.51488pt too wide) detected at line 146
+Overfull \hbox (4.51488pt too wide) detected at line 156
 []\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 S[]; S[]\OT1/cmr/m/n/12 ]) = [][] [][] [](\OMS/cms
 y/m/n/12 ^^@[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 du
  []
 
-
-Overfull \hbox (159.48027pt too wide) detected at line 167
-[]\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OT1/
-cmr/m/n/12 [\OML/cmm/m/it/12 S[]; S[]\OT1/cmr/m/n/12 ]) = [][1 + \OML/cmm/m/it/
-12 erf\OT1/cmr/m/n/12 ([])] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 [1 + \OML/cm
-m/m/it/12 erf\OT1/cmr/m/n/12 ([])]
- []
-
 [4]
-Overfull \hbox (117.91402pt too wide) detected at line 170
-[]\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 \OT1/
-cmr/m/n/12 [\OML/cmm/m/it/12 S[]; S[]\OT1/cmr/m/n/12 ]) = [][\OML/cmm/m/it/12 e
-rf\OT1/cmr/m/n/12 ([])] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 erf\OT1/cmr/m/n/1
-2 ([])]
+Overfull \hbox (73.32632pt too wide) detected at line 204
+[]
  []
 
 [5]
@@ -1518,6 +1512,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ’ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no “ in font cmr12!
+ [6]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ’ in font cmr12!
 Missing character: There is no Ã in font cmr12!
@@ -1528,46 +1523,48 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
  (./CRA paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
 Package rerunfilecheck Info: File `"CRA paper".out' has not changed.
-(rerunfilecheck)             Checksum: 0BE76E0739A9FD7F7FAA774EB5C27682;1029.
+(rerunfilecheck)             Checksum: D9407DAFE3ADD316E7F7AB9205020AF6;1153.
  ) 
 Here is how much of TeX's memory you used:
- 42706 strings out of 492995
- 955463 string characters out of 6132704
+ 42709 strings out of 492995
+ 955504 string characters out of 6132704
  1129590 words of memory out of 5000000
- 45529 multiletter control sequences out of 15000+600000
+ 45531 multiletter control sequences out of 15000+600000
  17805 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,101p,10446b,794s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/ETHIY/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm1
-2.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "CRA paper.pdf" (6 pages, 199916 bytes).
+ </Users/ETHIY/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm8
+.600pk> </Users/ETHIY/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm
+/bbm12.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmext
+ra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "CRA paper.pdf" (7 pages, 214560 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
