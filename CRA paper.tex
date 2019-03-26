@@ -183,15 +183,15 @@
 	 	
 		 	Is the value of the contract at a certain date\\
 		 	$\begin{array}{lcl}
-			 	E(T_i) = \sum_{k = 1}^{i} (C_k * e^{-r(T_i - T_k)}) -  \sum_{k = 1}^{i} ({T_f}^{'} {\delta_f}^{'} e^{-r({T_i}^{'} - {T_k}^{'})})\\
-			 	=payoff * \sum_{k=1}^{i}\frac{\sum_{j=k - 1}^{j=k}\indicator (S_{t_j} \in [S_{min},S_{max}])}{365} * e^{-r(T_i - T_k)} -  \sum_{{T_k}^{'} \in {{T_1}^{'}, {T_p}^{'}}} ({T_f}^{'} {\delta_f}^{'} e^{-r({T_i} - {T_k}^{'})})
+			 	E(T_i) = \sum_{k = 1}^{i} (C_k * e^{-r(T_i - T_k)}) -  \sum_{k = 1}^{i} ({T_f}^{'} {\delta_f}^{'} e^{r({T_i}^{'} - {T_k}^{'})})\\
+			 	=payoff * \sum_{k=1}^{i}\frac{\sum_{j=k - 1}^{j=k}\indicator (S_{t_j} \in [S_{min},S_{max}])}{365} * e^{r(T_i - T_k)} -  \sum_{{T_k}^{'} \in {{T_1}^{'}, {T_p}^{'}}} (r_f{\delta_f}^{'} e^{r({T_i} - {T_k}^{'})})
 		 	\end{array}$
 		 	
 		 	where ${T_p}^{'} = \max\{{T_j}^{'} \mbox{in fixed leg tenor }, T_j^{'} <= T_i\}$
 	 	\subsection{Hold value}
 	 	The hold value at a date $T_i$ is the expected future value of the contract if it has not been canceled at $T_i$, knowing the filtration of information we have today.\\
 	 	$\begin{array}{lcl}
-		 	H(T_i) = \E(E(T_{i}) * e^{r(\tau-T_i)} + \sum_{t \in[T_{i+1}; \tau ]}E(t)*e^{-r(t - T_i)} -  \sum_{t \in[{T_{i+1}}^{'}; \tau]} ({T_f}^{'} {\delta_f}^{'} e^{-r({T_i} - {T_k}^{'})})|S_{T_i})\\
+		 	H(T_i) = \E(E(T_{i}) * e^{r(\tau-T_i)} + \sum_{t \in[T_{i+1}; \tau ]}E(t)*e^{-r(t - T_i)} -  \sum_{{T_k}^{'} \in {{T_{p+1}}^{'}, \tau}} (r_f {\delta_f}^{'} e^{-r({T_k}^{'} - {T_i})})\\
 		 	
 	 	\end{array}$
 	 	
